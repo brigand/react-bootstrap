@@ -128,15 +128,17 @@ DropdownMenu.defaultProps = {
   pullRight: false
 };
 
-DropdownMenu.propTypes = {
-  open: React.PropTypes.bool,
-  pullRight: React.PropTypes.bool,
-  onClose: React.PropTypes.func,
-  labelledBy: React.PropTypes.oneOfType([
-    React.PropTypes.string,
-    React.PropTypes.number
-  ]),
-  onSelect: React.PropTypes.func
-};
+if (process.env.NODE_ENV !== 'production') {
+  DropdownMenu.propTypes = {
+    open: React.PropTypes.bool,
+    pullRight: React.PropTypes.bool,
+    onClose: React.PropTypes.func,
+    labelledBy: React.PropTypes.oneOfType([
+      React.PropTypes.string,
+      React.PropTypes.number
+    ]),
+    onSelect: React.PropTypes.func
+  };
+}
 
 export default DropdownMenu;

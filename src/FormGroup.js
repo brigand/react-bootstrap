@@ -26,19 +26,21 @@ FormGroup.defaultProps = {
   standalone: false
 };
 
-FormGroup.propTypes = {
-  standalone: React.PropTypes.bool,
-  hasFeedback: React.PropTypes.bool,
-  bsSize(props) {
-    if (props.standalone && props.bsSize !== undefined) {
-      return new Error('bsSize will not be used when `standalone` is set.');
-    }
+if (process.env.NODE_ENV !== 'production') {
+  FormGroup.propTypes = {
+    standalone: React.PropTypes.bool,
+    hasFeedback: React.PropTypes.bool,
+    bsSize(props) {
+      if (props.standalone && props.bsSize !== undefined) {
+        return new Error('bsSize will not be used when `standalone` is set.');
+      }
 
-    return React.PropTypes.oneOf(['small', 'medium', 'large'])
-      .apply(null, arguments);
-  },
-  bsStyle: React.PropTypes.oneOf(['success', 'warning', 'error']),
-  groupClassName: React.PropTypes.string
-};
+      return React.PropTypes.oneOf(['small', 'medium', 'large'])
+        .apply(null, arguments);
+    },
+    bsStyle: React.PropTypes.oneOf(['success', 'warning', 'error']),
+    groupClassName: React.PropTypes.string
+  };
+}
 
 export default FormGroup;

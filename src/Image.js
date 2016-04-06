@@ -3,7 +3,7 @@ import classNames from 'classnames';
 
 const Image = React.createClass({
 
-  propTypes: {
+  propTypes: process.env.NODE_ENV === 'production' ? undefined : {
 
     /**
      * Sets image as responsive image

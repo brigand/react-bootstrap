@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import elementType from 'react-prop-types/lib/elementType';
 
 const Row = React.createClass({
-  propTypes: {
+  propTypes: process.env.NODE_ENV === 'production' ? undefined : {
     /**
      * You can use a custom element for this component
      */

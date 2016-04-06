@@ -5,7 +5,7 @@ import elementType from 'react-prop-types/lib/elementType';
 
 const PaginationButton = React.createClass({
 
-  propTypes: {
+  propTypes: process.env.NODE_ENV === 'production' ? undefined : {
     className: React.PropTypes.string,
     eventKey: React.PropTypes.oneOfType([
       React.PropTypes.string,

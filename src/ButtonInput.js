@@ -23,14 +23,16 @@ ButtonInput.defaultProps = {
   type: 'button'
 };
 
-ButtonInput.propTypes = {
-  type: React.PropTypes.oneOf(ButtonInput.types),
-  bsStyle() {
-    // defer to Button propTypes of bsStyle
-    return null;
-  },
-  children: childrenValueValidation,
-  value: childrenValueValidation
-};
+if (process.env.NODE_ENV !== 'production') {
+  ButtonInput.propTypes = {
+    type: React.PropTypes.oneOf(ButtonInput.types),
+    bsStyle() {
+      // defer to Button propTypes of bsStyle
+      return null;
+    },
+    children: childrenValueValidation,
+    value: childrenValueValidation
+  };
+}
 
 export default ButtonInput;

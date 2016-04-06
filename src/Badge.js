@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import tbsUtils from './utils/bootstrapUtils';
 
 const Badge = React.createClass({
-  propTypes: {
+  propTypes: process.env.NODE_ENV === 'production' ? undefined : {
     pullRight: React.PropTypes.bool
   },
 

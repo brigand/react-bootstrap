@@ -6,7 +6,7 @@ import createChainedFunction from './utils/createChainedFunction';
 
 const NavbarToggle = React.createClass({
 
-  propTypes: {
+  propTypes: process.env.NODE_ENV === 'production' ? undefined : {
     onClick: React.PropTypes.func,
     /**
      * The toggle content, if left empty it will render the default toggle (seen above).

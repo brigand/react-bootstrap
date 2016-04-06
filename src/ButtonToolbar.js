@@ -5,7 +5,7 @@ import Button from './Button';
 
 const ButtonToolbar = React.createClass({
 
-  propTypes: {
+  propTypes: process.env.NODE_ENV === 'production' ? undefined : {
     bsSize: Button.propTypes.bsSize
   },
 

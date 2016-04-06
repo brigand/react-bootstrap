@@ -51,25 +51,27 @@ class SplitButton extends React.Component {
   }
 }
 
-SplitButton.propTypes = {
-  ...Dropdown.propTypes,
-  bsStyle: Button.propTypes.bsStyle,
+if (process.env.NODE_ENV !== 'production') {
+  SplitButton.propTypes = {
+    ...Dropdown.propTypes,
+    bsStyle: Button.propTypes.bsStyle,
 
-  /**
-   * @private
-   */
-  onClick() {},
-  target: React.PropTypes.string,
-  href: React.PropTypes.string,
-  /**
-   * The content of the split button.
-   */
-  title: React.PropTypes.node.isRequired,
-  /**
-   * Accessible label for the toggle; the value of `title` if not specified.
-   */
-  toggleLabel: React.PropTypes.string
-};
+    /**
+     * @private
+     */
+    onClick() {},
+    target: React.PropTypes.string,
+    href: React.PropTypes.string,
+    /**
+     * The content of the split button.
+     */
+    title: React.PropTypes.node.isRequired,
+    /**
+     * Accessible label for the toggle; the value of `title` if not specified.
+     */
+    toggleLabel: React.PropTypes.string
+  };
+}
 
 SplitButton.defaultProps = {
   disabled: false,

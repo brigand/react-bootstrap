@@ -7,7 +7,7 @@ import SafeAnchor from './SafeAnchor';
 
 const Pagination = React.createClass({
 
-  propTypes: {
+  propTypes: process.env.NODE_ENV === 'production' ? undefined : {
     activePage: React.PropTypes.number,
     items: React.PropTypes.number,
     maxButtons: React.PropTypes.number,

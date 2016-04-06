@@ -52,7 +52,7 @@ function move(children, currentKey, keys, moveNext) {
 }
 
 const Tabs = React.createClass({
-  propTypes: {
+  propTypes: process.env.NODE_ENV === 'production' ? undefined : {
     activeKey: React.PropTypes.any,
     defaultActiveKey: React.PropTypes.any,
     /**

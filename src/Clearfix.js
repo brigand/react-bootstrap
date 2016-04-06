@@ -4,7 +4,7 @@ import styleMaps from './styleMaps';
 import elementType from 'react-prop-types/lib/elementType';
 
 const Clearfix = React.createClass({
-  propTypes: {
+  propTypes: process.env.NODE_ENV === 'production' ? undefined : {
     /**
      * You can use a custom element for this component
      */

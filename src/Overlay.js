@@ -40,61 +40,63 @@ class Overlay extends React.Component {
   }
 }
 
-Overlay.propTypes = {
-  ...BaseOverlay.propTypes,
+if (process.env.NODE_ENV !== 'production') {
+  Overlay.propTypes = {
+    ...BaseOverlay.propTypes,
 
-  /**
-   * Set the visibility of the Overlay
-   */
-  show: React.PropTypes.bool,
-  /**
-   * Specify whether the overlay should trigger onHide when the user clicks outside the overlay
-   */
-  rootClose: React.PropTypes.bool,
-  /**
-   * A callback invoked by the overlay when it wishes to be hidden. Required if
-   * `rootClose` is specified.
-   */
-  onHide: React.PropTypes.func,
+    /**
+     * Set the visibility of the Overlay
+     */
+    show: React.PropTypes.bool,
+    /**
+     * Specify whether the overlay should trigger onHide when the user clicks outside the overlay
+     */
+    rootClose: React.PropTypes.bool,
+    /**
+     * A callback invoked by the overlay when it wishes to be hidden. Required if
+     * `rootClose` is specified.
+     */
+    onHide: React.PropTypes.func,
 
-  /**
-   * Use animation
-   */
-  animation: React.PropTypes.oneOfType([
-    React.PropTypes.bool,
-    elementType
-  ]),
+    /**
+     * Use animation
+     */
+    animation: React.PropTypes.oneOfType([
+      React.PropTypes.bool,
+      elementType
+    ]),
 
-  /**
-   * Callback fired before the Overlay transitions in
-   */
-  onEnter: React.PropTypes.func,
+    /**
+     * Callback fired before the Overlay transitions in
+     */
+    onEnter: React.PropTypes.func,
 
-  /**
-   * Callback fired as the Overlay begins to transition in
-   */
-  onEntering: React.PropTypes.func,
+    /**
+     * Callback fired as the Overlay begins to transition in
+     */
+    onEntering: React.PropTypes.func,
 
-  /**
-   * Callback fired after the Overlay finishes transitioning in
-   */
-  onEntered: React.PropTypes.func,
+    /**
+     * Callback fired after the Overlay finishes transitioning in
+     */
+    onEntered: React.PropTypes.func,
 
-  /**
-   * Callback fired right before the Overlay transitions out
-   */
-  onExit: React.PropTypes.func,
+    /**
+     * Callback fired right before the Overlay transitions out
+     */
+    onExit: React.PropTypes.func,
 
-  /**
-   * Callback fired as the Overlay begins to transition out
-   */
-  onExiting: React.PropTypes.func,
+    /**
+     * Callback fired as the Overlay begins to transition out
+     */
+    onExiting: React.PropTypes.func,
 
-  /**
-   * Callback fired after the Overlay finishes transitioning out
-   */
-  onExited: React.PropTypes.func
-};
+    /**
+     * Callback fired after the Overlay finishes transitioning out
+     */
+    onExited: React.PropTypes.func
+  };
+}
 
 Overlay.defaultProps = {
   animation: Fade,

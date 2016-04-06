@@ -9,7 +9,7 @@ import Item from './CarouselItem';
 
 let Carousel = React.createClass({
 
-  propTypes: {
+  propTypes: process.env.NODE_ENV === 'production' ? undefined : {
     slide: React.PropTypes.bool,
     indicators: React.PropTypes.bool,
     interval: React.PropTypes.number,

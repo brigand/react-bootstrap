@@ -6,7 +6,7 @@ import createChainedFunction from './utils/createChainedFunction';
 
 const Pager = React.createClass({
 
-  propTypes: {
+  propTypes: process.env.NODE_ENV === 'production' ? undefined : {
     onSelect: React.PropTypes.func
   },
 

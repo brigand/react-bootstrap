@@ -34,13 +34,15 @@ DropdownToggle.defaultProps = {
   bsRole: 'toggle'
 };
 
-DropdownToggle.propTypes = {
-  bsRole: React.PropTypes.string,
-  noCaret: React.PropTypes.bool,
-  open: React.PropTypes.bool,
-  title: React.PropTypes.string,
-  useAnchor: React.PropTypes.bool
-};
+if (process.env.NODE_ENV !== 'production') {
+  DropdownToggle.propTypes = {
+    bsRole: React.PropTypes.string,
+    noCaret: React.PropTypes.bool,
+    open: React.PropTypes.bool,
+    title: React.PropTypes.string,
+    useAnchor: React.PropTypes.bool
+  };
+}
 
 DropdownToggle.isToggle = true;
 DropdownToggle.titleProp = 'title';

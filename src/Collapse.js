@@ -118,87 +118,89 @@ class Collapse extends React.Component {
 // Explicitly copied from Transition for doc generation.
 // TODO: Remove duplication once #977 is resolved.
 
-Collapse.propTypes = {
-  /**
-   * Show the component; triggers the expand or collapse animation
-   */
-  in: React.PropTypes.bool,
+if (process.env.NODE_ENV !== 'production') {
+  Collapse.propTypes = {
+    /**
+     * Show the component; triggers the expand or collapse animation
+     */
+    in: React.PropTypes.bool,
 
-  /**
-   * Unmount the component (remove it from the DOM) when it is collapsed
-   */
-  unmountOnExit: React.PropTypes.bool,
+    /**
+     * Unmount the component (remove it from the DOM) when it is collapsed
+     */
+    unmountOnExit: React.PropTypes.bool,
 
-  /**
-   * Run the expand animation when the component mounts, if it is initially
-   * shown
-   */
-  transitionAppear: React.PropTypes.bool,
+    /**
+     * Run the expand animation when the component mounts, if it is initially
+     * shown
+     */
+    transitionAppear: React.PropTypes.bool,
 
-  /**
-   * Duration of the collapse animation in milliseconds, to ensure that
-   * finishing callbacks are fired even if the original browser transition end
-   * events are canceled
-   */
-  timeout: React.PropTypes.number,
+    /**
+     * Duration of the collapse animation in milliseconds, to ensure that
+     * finishing callbacks are fired even if the original browser transition end
+     * events are canceled
+     */
+    timeout: React.PropTypes.number,
 
-  /**
-   * duration
-   * @private
-   */
-  duration: deprecated(React.PropTypes.number, 'Use `timeout`.'),
+    /**
+     * duration
+     * @private
+     */
+    duration: deprecated(React.PropTypes.number, 'Use `timeout`.'),
 
-  /**
-   * Callback fired before the component expands
-   */
-  onEnter: React.PropTypes.func,
-  /**
-   * Callback fired after the component starts to expand
-   */
-  onEntering: React.PropTypes.func,
-  /**
-   * Callback fired after the component has expanded
-   */
-  onEntered: React.PropTypes.func,
-  /**
-   * Callback fired before the component collapses
-   */
-  onExit: React.PropTypes.func,
-  /**
-   * Callback fired after the component starts to collapse
-   */
-  onExiting: React.PropTypes.func,
-  /**
-   * Callback fired after the component has collapsed
-   */
-  onExited: React.PropTypes.func,
+    /**
+     * Callback fired before the component expands
+     */
+    onEnter: React.PropTypes.func,
+    /**
+     * Callback fired after the component starts to expand
+     */
+    onEntering: React.PropTypes.func,
+    /**
+     * Callback fired after the component has expanded
+     */
+    onEntered: React.PropTypes.func,
+    /**
+     * Callback fired before the component collapses
+     */
+    onExit: React.PropTypes.func,
+    /**
+     * Callback fired after the component starts to collapse
+     */
+    onExiting: React.PropTypes.func,
+    /**
+     * Callback fired after the component has collapsed
+     */
+    onExited: React.PropTypes.func,
 
-  /**
-   * The dimension used when collapsing, or a function that returns the
-   * dimension
-   *
-   * _Note: Bootstrap only partially supports 'width'!
-   * You will need to supply your own CSS animation for the `.width` CSS class._
-   */
-  dimension: React.PropTypes.oneOfType([
-    React.PropTypes.oneOf(['height', 'width']),
-    React.PropTypes.func
-  ]),
+    /**
+     * The dimension used when collapsing, or a function that returns the
+     * dimension
+     *
+     * _Note: Bootstrap only partially supports 'width'!
+     * You will need to supply your own CSS animation for the `.width` CSS class._
+     */
+    dimension: React.PropTypes.oneOfType([
+      React.PropTypes.oneOf(['height', 'width']),
+      React.PropTypes.func
+    ]),
 
-  /**
-   * Function that returns the height or width of the animating DOM node
-   *
-   * Allows for providing some custom logic for how much the Collapse component
-   * should animate in its specified dimension. Called with the current
-   * dimension prop value and the DOM node.
-   */
-  getDimensionValue: React.PropTypes.func,
+    /**
+     * Function that returns the height or width of the animating DOM node
+     *
+     * Allows for providing some custom logic for how much the Collapse component
+     * should animate in its specified dimension. Called with the current
+     * dimension prop value and the DOM node.
+     */
+    getDimensionValue: React.PropTypes.func,
 
-  /**
-   * ARIA role of collapsible element
-   */
-  role: React.PropTypes.string
-};
+    /**
+     * ARIA role of collapsible element
+     */
+    role: React.PropTypes.string
+  };
+}
 
 Collapse.defaultProps = {
   in: false,

@@ -25,7 +25,7 @@ function isOneOf(one, of) {
 }
 
 const OverlayTrigger = React.createClass({
-  propTypes: {
+  propTypes: process.env.NODE_ENV === 'production' ? undefined : {
 
     ...Overlay.propTypes,
 

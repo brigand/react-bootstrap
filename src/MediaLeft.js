@@ -3,7 +3,7 @@ import classNames from 'classnames';
 
 const MediaLeft = React.createClass({
   displayName: 'Media.Left',
-  propTypes: {
+  propTypes: process.env.NODE_ENV === 'production' ? undefined : {
     /**
      * Align the media to the top, middle or bottom
      * of the media object

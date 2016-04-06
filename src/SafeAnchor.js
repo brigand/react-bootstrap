@@ -29,7 +29,10 @@ export default class SafeAnchor extends React.Component {
   }
 }
 
-SafeAnchor.propTypes = {
-  href: React.PropTypes.string,
-  onClick: React.PropTypes.func
-};
+if (process.env.NODE_ENV !== 'production') {
+  SafeAnchor.propTypes = {
+    href: React.PropTypes.string,
+    onClick: React.PropTypes.func
+  };
+}
+

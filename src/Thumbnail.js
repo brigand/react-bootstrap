@@ -5,7 +5,7 @@ import bootstrapUtils, { bsClass } from './utils/bootstrapUtils';
 
 const Thumbnail = React.createClass({
 
-  propTypes: {
+  propTypes: process.env.NODE_ENV === 'production' ? undefined : {
     alt: React.PropTypes.string,
     href: React.PropTypes.string,
     src: React.PropTypes.string

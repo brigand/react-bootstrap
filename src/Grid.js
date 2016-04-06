@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import elementType from 'react-prop-types/lib/elementType';
 
 const Grid = React.createClass({
-  propTypes: {
+  propTypes: process.env.NODE_ENV === 'production' ? undefined : {
     /**
      * Turn any fixed-width grid layout into a full-width layout by this property.
      *

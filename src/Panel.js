@@ -6,7 +6,7 @@ import Collapse from './Collapse';
 
 let Panel = React.createClass({
 
-  propTypes: {
+  propTypes: process.env.NODE_ENV === 'production' ? undefined : {
     collapsible: React.PropTypes.bool,
     onSelect: React.PropTypes.func,
     header: React.PropTypes.node,

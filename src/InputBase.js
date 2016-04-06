@@ -207,29 +207,31 @@ class InputBase extends React.Component {
   }
 }
 
-InputBase.propTypes = {
-  type: React.PropTypes.string,
-  label: React.PropTypes.node,
-  help: React.PropTypes.node,
-  addonBefore: React.PropTypes.node,
-  addonAfter: React.PropTypes.node,
-  buttonBefore: React.PropTypes.node,
-  buttonAfter: React.PropTypes.node,
-  bsSize: React.PropTypes.oneOf(['small', 'medium', 'large']),
-  bsStyle: React.PropTypes.oneOf(['success', 'warning', 'error']),
-  hasFeedback: React.PropTypes.bool,
-  feedbackIcon: React.PropTypes.node,
-  id: React.PropTypes.oneOfType([
-    React.PropTypes.string,
-    React.PropTypes.number
-  ]),
-  groupClassName: React.PropTypes.string,
-  wrapperClassName: React.PropTypes.string,
-  labelClassName: React.PropTypes.string,
-  multiple: React.PropTypes.bool,
-  disabled: React.PropTypes.bool,
-  value: React.PropTypes.any
-};
+if (process.env.NODE_ENV !== 'production') {
+  InputBase.propTypes = {
+    type: React.PropTypes.string,
+    label: React.PropTypes.node,
+    help: React.PropTypes.node,
+    addonBefore: React.PropTypes.node,
+    addonAfter: React.PropTypes.node,
+    buttonBefore: React.PropTypes.node,
+    buttonAfter: React.PropTypes.node,
+    bsSize: React.PropTypes.oneOf(['small', 'medium', 'large']),
+    bsStyle: React.PropTypes.oneOf(['success', 'warning', 'error']),
+    hasFeedback: React.PropTypes.bool,
+    feedbackIcon: React.PropTypes.node,
+    id: React.PropTypes.oneOfType([
+      React.PropTypes.string,
+      React.PropTypes.number
+    ]),
+    groupClassName: React.PropTypes.string,
+    wrapperClassName: React.PropTypes.string,
+    labelClassName: React.PropTypes.string,
+    multiple: React.PropTypes.bool,
+    disabled: React.PropTypes.bool,
+    value: React.PropTypes.any
+  };
+}
 
 InputBase.defaultProps = {
   disabled: false,

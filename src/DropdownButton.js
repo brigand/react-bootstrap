@@ -32,19 +32,21 @@ class DropdownButton extends React.Component {
   }
 }
 
-DropdownButton.propTypes = {
-  disabled: React.PropTypes.bool,
-  bsStyle: Button.propTypes.bsStyle,
-  bsSize: Button.propTypes.bsSize,
+if (process.env.NODE_ENV !== 'production') {
+  DropdownButton.propTypes = {
+    disabled: React.PropTypes.bool,
+    bsStyle: Button.propTypes.bsStyle,
+    bsSize: Button.propTypes.bsSize,
 
-  /**
-   * When used with the `title` prop, the noCaret option will not render a caret icon, in the toggle element.
-   */
-  noCaret: React.PropTypes.bool,
-  title: React.PropTypes.node.isRequired,
+    /**
+     * When used with the `title` prop, the noCaret option will not render a caret icon, in the toggle element.
+     */
+    noCaret: React.PropTypes.bool,
+    title: React.PropTypes.node.isRequired,
 
-  ...Dropdown.propTypes,
-};
+    ...Dropdown.propTypes,
+  };
+}
 
 DropdownButton.defaultProps = {
   disabled: false,

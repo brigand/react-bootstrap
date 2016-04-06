@@ -23,10 +23,12 @@ class NavDropdown extends React.Component {
   }
 }
 
-NavDropdown.propTypes = {
-  noCaret: React.PropTypes.bool,
-  title: React.PropTypes.node.isRequired,
-  ...Dropdown.propTypes
-};
+if (process.env.NODE_ENV !== 'production') {
+  NavDropdown.propTypes = {
+    noCaret: React.PropTypes.bool,
+    title: React.PropTypes.node.isRequired,
+    ...Dropdown.propTypes
+  };
+}
 
 export default NavDropdown;

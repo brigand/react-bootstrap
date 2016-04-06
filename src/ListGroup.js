@@ -81,18 +81,20 @@ ListGroup.defaultProps = {
   componentClass: 'div'
 };
 
-ListGroup.propTypes = {
-  className: React.PropTypes.string,
-  /**
-   * The element for ListGroup if children are
-   * user-defined custom components.
-   * @type {("ul"|"div")}
-   */
-  componentClass: React.PropTypes.oneOf(['ul', 'div']),
-  id: React.PropTypes.oneOfType([
-    React.PropTypes.string,
-    React.PropTypes.number
-  ])
-};
+if (process.env.NODE_ENV !== 'production') {
+  ListGroup.propTypes = {
+    className: React.PropTypes.string,
+    /**
+     * The element for ListGroup if children are
+     * user-defined custom components.
+     * @type {("ul"|"div")}
+     */
+    componentClass: React.PropTypes.oneOf(['ul', 'div']),
+    id: React.PropTypes.oneOfType([
+      React.PropTypes.string,
+      React.PropTypes.number
+    ])
+  };
+}
 
 export default ListGroup;

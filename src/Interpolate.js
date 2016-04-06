@@ -9,7 +9,7 @@ const REGEXP = /\%\((.+?)\)s/;
 const Interpolate = React.createClass({
   displayName: 'Interpolate',
 
-  propTypes: {
+  propTypes: process.env.NODE_ENV === 'production' ? undefined : {
     component: React.PropTypes.node,
     format: React.PropTypes.string,
     unsafe: React.PropTypes.bool

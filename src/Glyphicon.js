@@ -2,7 +2,7 @@ import React from 'react';
 import classNames from 'classnames';
 
 const Glyphicon = React.createClass({
-  propTypes: {
+  propTypes: process.env.NODE_ENV === 'production' ? undefined : {
     /**
      * bootstrap className
      * @private

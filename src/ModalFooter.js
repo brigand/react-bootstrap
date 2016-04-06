@@ -13,13 +13,14 @@ class ModalFooter extends React.Component {
     );
   }
 }
-
-ModalFooter.propTypes = {
-  /**
-   * A css class applied to the Component
-   */
-  bsClass: React.PropTypes.string
-};
+if (process.env.NODE_ENV !== 'production') {
+  ModalFooter.propTypes = {
+    /**
+     * A css class applied to the Component
+     */
+    bsClass: React.PropTypes.string
+  };
+}
 
 ModalFooter.defaultProps = {
   bsClass: 'modal'

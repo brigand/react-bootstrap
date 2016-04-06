@@ -5,7 +5,7 @@ import isRequiredForA11y from 'react-prop-types/lib/isRequiredForA11y';
 
 const Popover = React.createClass({
 
-  propTypes: {
+  propTypes: process.env.NODE_ENV === 'production' ? undefined : {
 
     /**
      * An html id attribute, necessary for accessibility

@@ -25,7 +25,7 @@ import pick from 'lodash-compat/object/pick';
 
 const Modal = React.createClass({
 
-  propTypes: {
+  propTypes: process.env.NODE_ENV === 'production' ? undefined : {
     ...BaseModal.propTypes,
     ...ModalDialog.propTypes,
 

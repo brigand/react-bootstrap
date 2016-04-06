@@ -6,7 +6,7 @@ import { Sizes } from './styleMaps';
 
 const ModalDialog = React.createClass({
 
-  propTypes: {
+  propTypes: process.env.NODE_ENV === 'production' ? undefined : {
     /**
      * A css class to apply to the Modal dialog DOM node.
      */

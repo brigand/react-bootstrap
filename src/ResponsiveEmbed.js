@@ -31,24 +31,26 @@ ResponsiveEmbed.defaultProps = {
   a4by3: false
 };
 
-ResponsiveEmbed.propTypes = {
-  /**
-   * bootstrap className
-   * @private
-   */
-  bsClass: PropTypes.string,
-  /**
-   * This component accepts only one child element
-   */
-  children: PropTypes.element.isRequired,
-  /**
-   * 16by9 aspect ratio
-   */
-  a16by9: PropTypes.bool,
-  /**
-   * 4by3 aspect ratio
-   */
-  a4by3: PropTypes.bool
-};
+if (process.env.NODE_ENV !== 'production') {
+  ResponsiveEmbed.propTypes = {
+    /**
+     * bootstrap className
+     * @private
+     */
+    bsClass: PropTypes.string,
+    /**
+     * This component accepts only one child element
+     */
+    children: PropTypes.element.isRequired,
+    /**
+     * 16by9 aspect ratio
+     */
+    a16by9: PropTypes.bool,
+    /**
+     * 4by3 aspect ratio
+     */
+    a4by3: PropTypes.bool
+  };
+}
 
 export default ResponsiveEmbed;

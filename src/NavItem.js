@@ -5,7 +5,7 @@ import createChainedFunction from './utils/createChainedFunction';
 
 const NavItem = React.createClass({
 
-  propTypes: {
+  propTypes: process.env.NODE_ENV === 'production' ? undefined : {
     linkId: React.PropTypes.string,
     onSelect: React.PropTypes.func,
     active: React.PropTypes.bool,

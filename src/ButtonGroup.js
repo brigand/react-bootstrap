@@ -6,7 +6,7 @@ import Button from './Button';
 
 const ButtonGroup = React.createClass({
 
-  propTypes: {
+  propTypes: process.env.NODE_ENV === 'production' ? undefined : {
     vertical: React.PropTypes.bool,
     justified: React.PropTypes.bool,
     /**

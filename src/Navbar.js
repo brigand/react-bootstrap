@@ -36,7 +36,7 @@ function shouldRenderOldNavbar(component) {
 
 let Navbar = React.createClass({
 
-  propTypes: {
+  propTypes: process.env.NODE_ENV === 'production' ? undefined : {
     /**
      * Create a fixed navbar along the top of the screen, that scrolls with the page
      */

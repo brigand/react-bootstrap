@@ -2,7 +2,7 @@ import React from 'react';
 import classNames from 'classnames';
 
 const Table = React.createClass({
-  propTypes: {
+  propTypes: process.env.NODE_ENV === 'production' ? undefined : {
     striped: React.PropTypes.bool,
     bordered: React.PropTypes.bool,
     condensed: React.PropTypes.bool,

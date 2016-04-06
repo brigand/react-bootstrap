@@ -4,7 +4,7 @@ import styleMaps from './styleMaps';
 import elementType from 'react-prop-types/lib/elementType';
 
 const Col = React.createClass({
-  propTypes: {
+  propTypes: process.env.NODE_ENV === 'production' ? undefined : {
     /**
      * The number of columns you wish to span
      *

@@ -90,17 +90,19 @@ class ListGroupItem extends React.Component {
   }
 }
 
-ListGroupItem.propTypes = {
-  className: React.PropTypes.string,
-  active: React.PropTypes.any,
-  disabled: React.PropTypes.any,
-  header: React.PropTypes.node,
-  listItem: React.PropTypes.bool,
-  onClick: React.PropTypes.func,
-  eventKey: React.PropTypes.any,
-  href: React.PropTypes.string,
-  target: React.PropTypes.string
-};
+if (process.env.NODE_ENV !== 'production') {
+  ListGroupItem.propTypes = {
+    className: React.PropTypes.string,
+    active: React.PropTypes.any,
+    disabled: React.PropTypes.any,
+    header: React.PropTypes.node,
+    listItem: React.PropTypes.bool,
+    onClick: React.PropTypes.func,
+    eventKey: React.PropTypes.any,
+    href: React.PropTypes.string,
+    target: React.PropTypes.string
+  };
+}
 
 ListGroupItem.defaultTypes = {
   listItem: false

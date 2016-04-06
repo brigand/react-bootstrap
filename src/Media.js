@@ -11,7 +11,7 @@ import ListItem from './MediaListItem';
 
 let Media = React.createClass({
   displayName: 'Media',
-  propTypes: {
+  propTypes: process.env.NODE_ENV === 'production' ? undefined : {
     /**
      * You can use a custom element for the media container
      */

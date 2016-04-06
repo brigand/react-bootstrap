@@ -7,7 +7,7 @@ import ValidComponentChildren from './utils/ValidComponentChildren';
 const PanelGroup = React.createClass({
 
 
-  propTypes: {
+  propTypes: process.env.NODE_ENV === 'production' ? undefined : {
     accordion: React.PropTypes.bool,
     activeKey: React.PropTypes.any,
     className: React.PropTypes.string,

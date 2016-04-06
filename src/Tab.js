@@ -5,7 +5,7 @@ import tbsUtils from './utils/bootstrapUtils';
 import TransitionEvents from './utils/TransitionEvents';
 
 const Tab = React.createClass({
-  propTypes: {
+  propTypes: process.env.NODE_ENV === 'production' ? undefined : {
     /**
      * @private
      */

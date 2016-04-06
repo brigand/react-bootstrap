@@ -4,7 +4,7 @@ import classNames from 'classnames';
 
 const MediaHeading = React.createClass({
   displayName: 'Media.Heading',
-  propTypes: {
+  propTypes: process.env.NODE_ENV === 'production' ? undefined : {
     /**
      * You can use a custom element for the media heading
      */

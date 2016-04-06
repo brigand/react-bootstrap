@@ -6,7 +6,7 @@ import TransitionEvents from './utils/TransitionEvents';
 import tbsUtils from './utils/bootstrapUtils';
 
 const CarouselItem = React.createClass({
-  propTypes: {
+  propTypes: process.env.NODE_ENV === 'production' ? undefined : {
     direction: React.PropTypes.oneOf(['prev', 'next']),
     onAnimateOutEnd: React.PropTypes.func,
     active: React.PropTypes.bool,

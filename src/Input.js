@@ -14,8 +14,10 @@ class Input extends InputBase {
   }
 }
 
-Input.propTypes = {
-  type: React.PropTypes.string
-};
+if (process.env.NODE_ENV !== 'production') {
+  Input.propTypes = {
+    type: React.PropTypes.string
+  };
+}
 
 export default Input;

@@ -4,7 +4,7 @@ import ValidComponentChildren from './utils/ValidComponentChildren';
 import BreadcrumbItem from './BreadcrumbItem';
 
 const Breadcrumb = React.createClass({
-  propTypes: {
+  propTypes: process.env.NODE_ENV === 'production' ? undefined : {
     /**
      * bootstrap className
      * @private

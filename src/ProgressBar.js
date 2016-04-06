@@ -118,23 +118,25 @@ class ProgressBar extends React.Component {
   }
 }
 
-ProgressBar.propTypes = {
-  ...ProgressBar.propTypes,
-  min: PropTypes.number,
-  now: PropTypes.number,
-  max: PropTypes.number,
-  label: PropTypes.node,
-  srOnly: PropTypes.bool,
-  striped: PropTypes.bool,
-  active: PropTypes.bool,
-  children: onlyProgressBar,
-  className: React.PropTypes.string,
-  interpolateClass: PropTypes.node,
-  /**
-   * @private
-   */
-  isChild: PropTypes.bool
-};
+if (process.end.NODE_ENV !== 'production') {
+  ProgressBar.propTypes = {
+    ...ProgressBar.propTypes,
+    min: PropTypes.number,
+    now: PropTypes.number,
+    max: PropTypes.number,
+    label: PropTypes.node,
+    srOnly: PropTypes.bool,
+    striped: PropTypes.bool,
+    active: PropTypes.bool,
+    children: onlyProgressBar,
+    className: React.PropTypes.string,
+    interpolateClass: PropTypes.node,
+    /**
+     * @private
+     */
+    isChild: PropTypes.bool
+  };
+}
 
 ProgressBar.defaultProps = {
   ...ProgressBar.defaultProps,

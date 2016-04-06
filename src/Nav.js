@@ -93,70 +93,72 @@ class Nav extends React.Component {
   }
 }
 
-Nav.propTypes = {
-  activeHref: React.PropTypes.string,
-  activeKey: React.PropTypes.any,
+if (process.env.NODE_ENV !== 'production') {
+  Nav.propTypes = {
+    activeHref: React.PropTypes.string,
+    activeKey: React.PropTypes.any,
 
-  stacked: React.PropTypes.bool,
-  justified: all(
-    React.PropTypes.bool,
-    ({justified, navbar}) => (
-      justified && navbar ?
-        Error('justified navbar `Nav`s are not supported') : null
-    )
-  ),
-  onSelect: React.PropTypes.func,
+    stacked: React.PropTypes.bool,
+    justified: all(
+      React.PropTypes.bool,
+      ({justified, navbar}) => (
+        justified && navbar ?
+          Error('justified navbar `Nav`s are not supported') : null
+      )
+    ),
+    onSelect: React.PropTypes.func,
 
-  /**
-   * CSS classes for the wrapper `nav` element
-   */
-  className: React.PropTypes.string,
-  /**
-   * HTML id for the wrapper `nav` element
-   */
-  id: React.PropTypes.oneOfType([
-    React.PropTypes.string,
-    React.PropTypes.number
-  ]),
-  /**
-   * CSS classes for the inner `ul` element
-   *
-   * @deprecated
-   */
-  ulClassName: deprecated(React.PropTypes.string,
-    'The wrapping `<nav>` has been removed you can use `className` now'),
-  /**
-   * HTML id for the inner `ul` element
-   *
-   * @deprecated
-   */
+    /**
+     * CSS classes for the wrapper `nav` element
+     */
+    className: React.PropTypes.string,
+    /**
+     * HTML id for the wrapper `nav` element
+     */
+    id: React.PropTypes.oneOfType([
+      React.PropTypes.string,
+      React.PropTypes.number
+    ]),
+    /**
+     * CSS classes for the inner `ul` element
+     *
+     * @deprecated
+     */
+    ulClassName: deprecated(React.PropTypes.string,
+      'The wrapping `<nav>` has been removed you can use `className` now'),
+    /**
+     * HTML id for the inner `ul` element
+     *
+     * @deprecated
+     */
 
-  ulId: deprecated(React.PropTypes.string,
-    'The wrapping `<nav>` has been removed you can use `id` now'),
+    ulId: deprecated(React.PropTypes.string,
+      'The wrapping `<nav>` has been removed you can use `id` now'),
 
-  /**
-   * Apply styling an alignment for use in a Navbar. This prop will be set
-   * automatically when the Nav is used inside a Navbar.
-   */
-  navbar: React.PropTypes.bool,
-  eventKey: React.PropTypes.any,
-  pullRight: React.PropTypes.bool,
-  pullLeft: React.PropTypes.bool,
+    /**
+     * Apply styling an alignment for use in a Navbar. This prop will be set
+     * automatically when the Nav is used inside a Navbar.
+     */
+    navbar: React.PropTypes.bool,
+    eventKey: React.PropTypes.any,
+    pullRight: React.PropTypes.bool,
+    pullLeft: React.PropTypes.bool,
 
-  right: deprecated(React.PropTypes.bool,
-    'Use the `pullRight` prop instead'),
+    right: deprecated(React.PropTypes.bool,
+      'Use the `pullRight` prop instead'),
 
-  /**
-   * @private
-   */
-  expanded: React.PropTypes.bool,
+    /**
+     * @private
+     */
+    expanded: React.PropTypes.bool,
 
-  /**
-   * @private
-   */
-  collapsible: deprecated(React.PropTypes.bool,
-    'Use `Navbar.Collapse` instead, to create collapsible Navbars'),
-};
+    /**
+     * @private
+     */
+    collapsible: deprecated(React.PropTypes.bool,
+      'Use `Navbar.Collapse` instead, to create collapsible Navbars'),
+  };
+}
 
 Nav.contextTypes = {
   $bs_navbar: React.PropTypes.bool,

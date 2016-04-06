@@ -4,7 +4,7 @@ import React from 'react';
 import SafeAnchor from './SafeAnchor';
 
 const BreadcrumbItem = React.createClass({
-  propTypes: {
+  propTypes: process.env.NODE_ENV === 'production' ? undefined : {
     /**
      * If set to true, renders `span` instead of `a`
      */

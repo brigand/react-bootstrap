@@ -5,7 +5,7 @@ import { State } from './styleMaps';
 
 let Alert = React.createClass({
 
-  propTypes: {
+  propTypes: process.env.NODE_ENV === 'production' ? undefined : {
     onDismiss: React.PropTypes.func,
     dismissAfter: React.PropTypes.number,
     closeLabel: React.PropTypes.string

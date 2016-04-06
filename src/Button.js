@@ -11,7 +11,7 @@ const ButtonStyles = State.values().concat(DEFAULT, PRIMARY, LINK);
 
 let Button = React.createClass({
 
-  propTypes: {
+  propTypes: process.env.NODE_ENV === 'production' ? undefined : {
     active: React.PropTypes.bool,
     disabled: React.PropTypes.bool,
     block: React.PropTypes.bool,

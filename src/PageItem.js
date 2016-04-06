@@ -4,7 +4,7 @@ import SafeAnchor from './SafeAnchor';
 
 const PageItem = React.createClass({
 
-  propTypes: {
+  propTypes: process.env.NODE_ENV === 'production' ? undefined : {
     href: React.PropTypes.string,
     target: React.PropTypes.string,
     title: React.PropTypes.string,

@@ -8,7 +8,7 @@ import createChainedFunction from './utils/createChainedFunction';
 
 let CollapsibleNav = React.createClass({
 
-  propTypes: {
+  propTypes: process.env.NODE_ENV === 'production' ? undefined : {
     onSelect: React.PropTypes.func,
     activeHref: React.PropTypes.string,
     activeKey: React.PropTypes.any,

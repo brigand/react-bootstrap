@@ -31,26 +31,28 @@ class ModalHeader extends React.Component {
   }
 }
 
-ModalHeader.propTypes = {
-  /**
-   * The 'aria-label' attribute provides an accessible label for the close button.
-   * It is used for Assistive Technology when the label text is not readable.
-   */
-  'aria-label': React.PropTypes.string,
+if (process.env.NODE_ENV !== 'production') {
+  ModalHeader.propTypes = {
+    /**
+     * The 'aria-label' attribute provides an accessible label for the close button.
+     * It is used for Assistive Technology when the label text is not readable.
+     */
+    'aria-label': React.PropTypes.string,
 
-  bsClass: React.PropTypes.string,
+    bsClass: React.PropTypes.string,
 
-  /**
-   * Specify whether the Component should contain a close button
-   */
-  closeButton: React.PropTypes.bool,
+    /**
+     * Specify whether the Component should contain a close button
+     */
+    closeButton: React.PropTypes.bool,
 
-  /**
-   * A Callback fired when the close button is clicked. If used directly inside a Modal component, the onHide will automatically
-   * be propagated up to the parent Modal `onHide`.
-   */
-  onHide: React.PropTypes.func
-};
+    /**
+     * A Callback fired when the close button is clicked. If used directly inside a Modal component, the onHide will automatically
+     * be propagated up to the parent Modal `onHide`.
+     */
+    onHide: React.PropTypes.func
+  };
+}
 
 ModalHeader.contextTypes = {
   '$bs_onModalHide': React.PropTypes.func
